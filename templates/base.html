@@ -2,18 +2,32 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <title>Главная страница</title>
+    <title> Главная страница </title>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400"
           rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main1.css' %}?version=x">
 </head>
 <body>
 <header>
-    <h1><a href="{% url 'home' %}">Учебный блог</a></h1>
-    <hr>
+    <h1><a class="button" href="{% url 'home' %}">Учебный блог</a></h1>
+    {% if not user.is_authenticated %}
+        <a class="button" href="{% url 'login' %}">Войти</a>
+        <a class="button" href="{% url 'signup' %}">Регистрация</a>
+    {% else %}
+        <p class='button' ><a href="{% url 'logout' %}">Выйти</a></p>
+    {% endif %}
+    <a class='button'  href="{% url 'post_new' %}">+ Добавить запись</a>
 </header>
+<hr>
 <div>
-    {% block content %}
-    {% endblock content %}
+        {% if user.is_authenticated %}
+            <p>Приветствую {{ user.username }}!</p>
+        {% else %}
+            <p>Вы не вошли в систему.</p>
+           {% endif %}
+        {% block content %}
+
+         {% endblock content %}
+
 </div>
 </body>
