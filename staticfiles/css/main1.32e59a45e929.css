@@ -1,0 +1,61 @@
+body{
+
+    margin: 1% 1% 1% 1%;
+    font-family: "monospace";
+    font-size: 18px;
+}
+
+header{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+div{
+
+    border: midnightblue;
+}
+
+.title{
+
+    color: black;
+    text-decoration-line: none;
+}
+.title:hover{
+    color: coral;
+}
+
+.post-entry{
+    display: flex;
+    flex-flow: wrap column-reverse;
+    justify-content: space-around;
+    border: 10px;
+    text-align: left;
+}
+
+.button{
+    color: black;
+    text-decoration-line: none;
+    padding-right: 100px;
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-evenly;
+    align-self: center;
+    text-align: center;
+
+}
+
+.button:hover{
+    color: mediumvioletred;
+    text-decoration-line: underline;
+}
+.button:active{
+    color: crimson;
+
+}
+
+
+
+
+@media screen and (min-width: 400px) {
+
+}
